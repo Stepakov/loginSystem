@@ -21,11 +21,11 @@ else
 <hr>
 
 <?php if( ! $user ) : ?>
-<a href="/5/signup.php">SignUP</a> <br>
-<a href="/5/login.php">Login</a> <br>
+<a href="/5/procedurestyle/signup.php">SignUP</a> <br>
+<a href="/5/procedurestyle/login.php">Login</a> <br>
 <?php else : ?>
-<a href="/5/logout.php">Logout</a> <br>
-<a href="/5/cabinet.php">Cabinet</a> <br>
+<a href="/5/procedurestyle/logout.php">Logout</a> <br>
+<a href="/5/procedurestyle/cabinet.php">Cabinet</a> <br>
 <?php endif; ?>
 
 <hr>

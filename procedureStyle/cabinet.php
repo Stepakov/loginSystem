@@ -2,6 +2,8 @@
 session_start();
 $user = require "getUser.php";
 
+var_dump( $user );
+
 require "restricted.php";
 
 if( $user )
@@ -16,6 +18,6 @@ else
 ?>
 
 <hr>
-<a href="/5/logout.php">Logout</a> <br>
-<a href="/5/index.php">Home</a>
+<a href="/5/procedurestyle/logout.php">Logout</a> <br>
+<a href="/5/procedurestyle/index.php">Home</a>
 <hr>
