@@ -7,6 +7,8 @@ use classes\Login\Login;
 use classes\SignUp\SignUp;
 use classes\User\User;
 
+$params = require 'config.php';
+
 if( str_contains( $_SERVER[ 'HTTP_REFERER' ], 'login' ) )
 {
     $email = $_POST[ 'email' ];
@@ -21,7 +23,7 @@ if( str_contains( $_SERVER[ 'HTTP_REFERER' ], 'login' ) )
         echo $e->getMessage();
     }
 
-    $db = new Db( 'localhost', 'students', 'root', '' );
+    $db = new Db( $params[ 'host' ], $params[ 'database' ], $params[ 'user' ], $params[ 'password' ] );
 
     $query = "SELECT login, email, password FROM users WHERE email='$email'";
 
@@ -81,7 +83,7 @@ elseif( str_contains( $_SERVER[ 'HTTP_REFERER' ], 'signup' ) )
 
 //    $db = new PDO( "mysql:host=localhost;dbname=students", 'root', '' );
 
-    $db = new Db( 'localhost', 'students', 'root', '' );
+    $db = new Db( $params[ 'host' ], $params[ 'database' ], $params[ 'user' ], $params[ 'password' ] );
 
     $query = "INSERT INTO users ( login, email, password ) VALUES ( '{$signup->getLogin()}', '{$signup->getEmail()}', '{$signup->getPasswordHash()}' )";
 
